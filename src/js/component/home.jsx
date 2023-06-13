@@ -14,8 +14,8 @@ const Home = () => {
 		}
 	}
 
-	const deleteTask = () => {
-
+	const deleteItems = (index) => {
+		setItems(items => items.filter((item, i) => i !== index));
 	}
 
 
@@ -27,11 +27,13 @@ const Home = () => {
 				<li className="list-group-item pe-2 d-flex justify-content-start">
 					<input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
 					<button className="btn btn-success mx-2" onClick={addTask} >Add Task</button>
-					{/* <button className="btn btn-success">Delete Task</button> */}
+					
 				</li>
 				<ul className="list-group">
 					{items.map((item, index) => (
-						<li className="list-group-item d-flex justify-content-start" key={index}>{item}</li>
+			
+							<li className="list-group-item d-flex justify-content-start" key={index}>{item} <button className="btn btn-success mx-2" onClick={() => deleteItems(index)}>Delete Task</button></li>
+						
 					))} 
 				</ul>
 				
