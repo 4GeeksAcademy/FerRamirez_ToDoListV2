@@ -20,24 +20,28 @@ const Home = () => {
 
 
 	return (
-		<div className="text-center container">
-			<h1 className="text-center mt-5">To Do List</h1>
+		<div className="m-4 p-5 rounded bg-secondary">
+			<h1 className="text-center m-5">Pending Tasks 📝: </h1>
+
+			<div className="input-group mb-3">
+  				<button className="btn btn-success input-group-text" onClick={addTask}><i class="bi bi-plus-circle"></i></button>
+ 				<input type="text" class="form-control" placeholder="What needs to be done?" aria-label="what" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
+			</div>
 			
-			<ul className="list-group">
-				<li className="list-group-item pe-2 d-flex justify-content-start">
-					<input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
-					<button className="btn btn-success mx-2" onClick={addTask} >Add Task</button>
+			
+			<ol className=" list-group list-group-numbered pt-2 d-grid gap-2 d-flex">
+				{items.map((item, index) => (
+		
+					<li className="list-group-item gap-3 fs-5 rounded d-flex justify-content-between align-items-center" key={index}>{item}<button className="btn btn-outline-danger ms-2 py-0 px-1" onClick={() => deleteItems(index)}>
+					<i class="bi bi-x-lg"></i>
 					
-				</li>
-				<ul className="list-group">
-					{items.map((item, index) => (
-			
-							<li className="list-group-item d-flex justify-content-start" key={index}>{item} <button className="btn btn-success mx-2" onClick={() => deleteItems(index)}>Delete Task</button></li>
+						</button>
 						
-					))} 
-				</ul>
+					</li>
+				))} 
+			</ol>
 				
-			</ul>
+			
 			
 		</div>
 	);
