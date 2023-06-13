@@ -10,3 +10,20 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+body {
+    background-image: url(https://img.freepik.com/free-photo/natural-wooden-background_24837-269.jpg?w=740&t=st=1686642916~exp=1686643516~hmac=db3a77607214e7518aff72128deb5bc6974a96662924c9b80269cd84356bd3cd);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+  }
+
+.notes-body {
+    background-image: url(https://img.freepik.com/free-vector/blank-white-notepaper-design_53876-118304.jpg?w=740&t=st=1686642144~exp=1686642744~hmac=85023118651e244d7192f8b73c95132b4e0e33854eae631fb0af3af9a4dfb969);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
